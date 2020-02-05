@@ -1,0 +1,18 @@
+body {
+}
+
+.link-text {
+    color: red;
+}
+
+ul li a {
+    color: green;
+}
+
+ul a {
+    color: yellow;
+}
+
+a {
+    color: blue;
+}
