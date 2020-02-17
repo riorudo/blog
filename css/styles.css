@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 8vh 15vh 69vh 8vh;
+    grid-template-areas:
+            "hd"
+            "sd"
+            "main"
+            "ft";
+    box-sizing: border-box;
+}
+.box {
+    background: white;
+    box-sizing: border-box;
+}
+.header {
+    grid-area: hd;
+    box-sizing: border-box;
+    border-bottom: 1px solid lightblue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-overflow: ellipsis;
+}
+.sidebar {
+    grid-area: sd;
+    box-sizing: border-box;
+    padding: 20px;
+    border-right: 1px solid lightblue;
+}
+.content {
+    grid-area: main;
+    background: aliceblue;
+    box-sizing: border-box;
+    padding: 0 20px;
+    overflow-y: auto;
+}
+
+.article-short {
+    display: block;
+    background: white;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid lightblue;
+}
+.footer {
+    grid-area: ft;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid lightblue;
+}
+
+@media(min-width:900px){
+    .container {
+        display: grid;
+        grid-template-rows: 20vh 72vh 8vh;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas:
+                "hd hd hd hd hd hd hd hd hd hd hd hd"
+                "sd sd main main main main main main main main main main"
+                "ft ft ft ft ft ft ft ft ft ft ft ft";
+    }
+}
