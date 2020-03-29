@@ -1,0 +1,29 @@
+.article-full-collection {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-full-collection .article-img {
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.article-collection-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-img img:hover {
+    filter: invert(100%);
+    transition: filter 0.5s;
+}
+
+.article-img-params {
+    padding-left: 5px;
+}
+
+@media (min-width: 900px) {
+    .article-collection-group {
+        flex-direction: row;
+    }
+}

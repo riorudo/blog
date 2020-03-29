@@ -1,0 +1,34 @@
+.article-header {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.article-header-img {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 250px;
+    background: url("../img/maurer_rose_svg/maurer_rose_69.68757893601692_62.01883353719547.svg") no-repeat center center;
+    background-size: cover;
+}
+
+.article-width {
+    width: 100%;
+    margin: auto;
+}
+
+.code {
+    display: inline-block;
+    background-color: aliceblue;
+    border-radius: 20%;
+    padding: 0 5px;
+}
+
+@media (min-width: 900px) {
+    .article-collection-group {
+        flex-direction: row;
+    }
+
+    .article-width {
+        max-width: 800px;
+    }
+}

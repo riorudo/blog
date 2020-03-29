@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog - How to create Maurer Rose graphics with P5.js</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+    <link rel="stylesheet" href="./css/styles.css"/>
+    <link rel="stylesheet" href="./css/article-full.css"/>
+</head>
+<body>
+<section class="container">
+    <header class="header box">
+        <div class="header-logo">
+            <img src="img/logo.jpg"/>
+        </div>
+        <div class="header-title">
+            <h1>Blog</h1>
+        </div>
+    </header>
+    <aside class="sidebar box">
+        <div class="nav">
+            <h4><img src="img/hamburger_menu.svg" alt="Hamburger menu icon" class="hamburger-menu" id="hamburger-menu"
+                     title="Open the menu"/>Articles</h4>
+            <nav aria-labelledby="Articles" role="navigation" id="nav-items">
+                <ul>
+                    <li class="nav-item"><a href="index.html" title="Navigate to the 'home' page">Home</a></li>
+                    <li class="nav-item"><a href="article_01.html"
+                                            title="Navigate to the article 'How to create a Maurer Rose'">How to create
+                        a Maurer Rose</a></li>
+                    <li class="nav-item"><a href="article_02.html"
+                                            title="Navigate to the article 'Maurer Rose Collection (Part 1)'">Collection
+                        (Part 1)</a></li>
+                    <li class="nav-item"><a href="article_03.html"
+                                            title="Navigate to the article 'Maurer Rose Collection (Part 2)'">Collection
+                        (Part 2)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <section class="content box">
+        <article class="article">
+            <div class="article-full article-width">
+                <header class="article-header">
+                    <h1>How to create Maurer Rose graphics with P5.js</h1>
+                    <div class="article-header-img">
+                    </div>
+                </header>
+                <article>
+                    <p>
+                        In this article, I will show you how to create a Maurer Rose SVG generator using the library <a
+                            href="https://p5js.org/"
+                            title="Go to p5js.org"
+                            target="_blank">p5.js</a> from the <a
+                            href="https://processing.org"
+                            title="Go to processing.org"
+                            target="_blank">Processing</a> foundation.
+                        First of all, I want to mention that most of the code I used is strongly inspired by a <a
+                            href="https://www.youtube.com/watch?v=4uU9lZ-HSqA"
+                            title="Go to the youtube tutorial: Coding in the Cabana 1: Maurer Rose"
+                            target="_blank">tutorial</a>
+                        of Daniel Shiffman.
+                        The library p5.js aims to provide a tool for making coding in the context of "visual art" more
+                        accessible for artists, designers and everybody else interested in this topic.
+                    </p>
+                    <p>
+                        The Maurer Rose algorithm was first published in 1987 by Peter M. Maurer and allows to create
+                        beautiful geometric roses by coding.
+                        The playground is the polar coordinate system where the following formula is applied: <i>r =
+                        sin(n&theta;)</i>.
+                        In this example, <i>n</i> is a positive integer. If <i>n</i> is odd, the rose is going to have
+                        <i>n</i> petals, and <i>2n</i> if <i>n</i> is even.
+                        The rose itself consists of walking along a <i>n</i> or <i>2n</i> leafed rose in 360 steps of a
+                        fixed number <i>d</i> (degrees) including all cosets.
+                        More information can be found on <a href="https://en.wikipedia.org/wiki/Maurer_rose"
+                                                            title="Open Maurer Rose on Wikipedia"
+                                                            target="_blank">Wikipedia</a> or in the <a
+                            href="https://www.tandfonline.com/doi/abs/10.1080/00029890.1987.12000695"
+                            title="Link to the original paper of M. Maurer"
+                            target="_blank">published paper</a> of Peter M. Maurer.
+                    </p>
+                    <p>
+                        The code example in p5.js has two main functions, the <span class="code">setup()</span>
+                        and the <span class="code">draw()</span> function.
+                        The <span class="code">setup()</span> function is called once when the page is initialized.
+                        Environment parameters such screen size, fonts or background colors are declared here.
+                        The following block is showing the configuration used by the Maurer Rose generator.
+                        First, a canvas is created and two sliders are defined. Using the sliders the user can
+                        interact and create different parameter combinations at a later stage that allow for the
+                        creation of beautiful Maurer roses.
+                    </p>
+                    <script src="https://gist.github.com/riorudo/7ab3fe590e184a14bffc376e80d820dc.js"></script>
+
+                    <p>Called directly after <span class="code">setup()</span>, the <span class="code">draw()</span>
+                        function continuously executes the lines of code
+                        contained inside its block until the program is stopped or <span class="code">noLoop()</span> is
+                        called.</p>
+                    <p>
+                        As shown in the code snipped below, the first two lines in the <span class="code">draw()</span>
+                        function set the background color to black and the stroke color to the defines RGB colors (see
+                        code of <i>maurer_rose_full.js</i> at the end of the article),
+                        followed by the assignment of the slider values to the variables <i>n</i> and <i>d</i>.
+                        On the next line, some stroke properties are set as <span class="code">noFill()</span> and <span
+                            class="code">strokeWeight()</span>.
+                        Finally, we get to the core part of the <span class="code">draw()</span> function. This consists
+                        of a for - loop which iterates over 360 points and connects them depending on the parameters <i>n</i>
+                        and <i>d</i>.
+                        The <span class="code">vertex()</span> function is used to move the drown shape to the center of
+                        the canvas.
+                        At this point, the shape is closed by <span class="code">endShape()</span> and the parameters
+                        <i>n</i> and <i>d</i> are displayed in the canvas.
+                        But the maurer rose is not completed yet. The structure is finalized but the petals of the rose
+                        are not present yet.
+                        In order to achieve this, we have to repeat the loop using a slightly adapted algorithm. For
+                        this purpose, we change the color to blue and the value <i>k</i> is now calculated without the
+                        parameter <i>d</i> (<i>d</i> is set to 1).
+
+                    </p>
+                    <script src="https://gist.github.com/riorudo/f83e8225d5e530a2f75c8892c9ac5842.js"></script>
+                    <p>The second part of the of the Maurer Rose SVG generator deals with the generation of a SVG
+                        graphic from the displayed maurer rose for downloading it.
+                        Thus, a new function <span class="code">doubleClicked()</span> is created. This function can be
+                        executed by a double click on the canvas.
+                        This method generates the exact same maurer rose as displayed and saves it to an SVG graphic
+                        with the parameters <i>n</i> and <i>d</i> as part of the file name.</p>
+                    <script src="https://gist.github.com/riorudo/6a72d49eea0e387331ecc2d8465f33c0.js"></script>
+                    <p>I hope you enjoyed this article and are ready for some fun. Check out the <a
+                            href="https://editor.p5js.org/riorudo/sketches/Znh7ddrX"
+                            title="Open the Maurer Rose code in the p5.js editor" target="_blank">Demo</a>.
+                    </p>
+                </article>
+                <footer>
+                    <button><a href="index.html" title="Back to the home">Back to home</a></button>
+                    <br><br>
+                    <span class="article-category">#coding, #art</span>
+                    <br>
+                    <span class="article-author">by riorudo - 18/02/2020</span>
+                </footer>
+            </div>
+        </article>
+    </section>
+    <footer class="footer box">
+        <span class="footer-page-author">Created by riorudo 2020 - Copyleft</span>
+    </footer>
+</section>
+<script src="js/menu-expander.js" type="application/javascript"></script>
+</body>
+</html>

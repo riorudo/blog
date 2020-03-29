@@ -4,76 +4,146 @@
     <meta charset="UTF-8">
     <title>Blog</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css"/>
+    <link rel="stylesheet" href="./css/overview-page.css"/>
 </head>
 <body>
 <section class="container">
     <header class="header box">
-        <div>
-            <img src="img/logo.PNG" />
-            <h1>Blog - this and that</h1>
+        <div class="header-logo">
+            <img src="img/logo.jpg"/>
+        </div>
+        <div class="header-title">
+            <h1>Blog</h1>
         </div>
     </header>
     <aside class="sidebar box">
-        <h3>Sidebar</h3>
-        <ul>
-            <li>a list item</li>
-            <li>a list item</li>
-            <li>a list item</li>
-        </ul>
+        <div class="nav">
+            <h4><img src="img/hamburger_menu.svg" alt="Hamburger menu icon" class="hamburger-menu" id="hamburger-menu"
+                     title="Open the menu"/>Articles</h4>
+            <nav aria-labelledby="Articles" role="navigation" id="nav-items">
+                <ul>
+                    <li class="nav-item"><a href="article_01.html"
+                                            title="Navigate to the article 'How to create a Maurer Rose'">How to create
+                        a Maurer Rose</a></li>
+                    <li class="nav-item"><a href="article_02.html"
+                                            title="Navigate to the article 'Maurer Rose Collection (Part 1)'">Collection
+                        (Part 1)</a></li>
+                    <li class="nav-item"><a href="article_03.html"
+                                            title="Navigate to the article 'Maurer Rose Collection (Part 2)'">Collection
+                        (Part 2)</a></li>
+                </ul>
+            </nav>
+        </div>
     </aside>
     <section class="content box">
-        <article class="article-short">
-            <header>
-                <span>#programming, #art</span>
-                <h3>How to create Maurer Rose Graphics with P5.js</h3>
-            </header>
-            <article>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <button>Read more...</button>
-            </article>
-            <footer>
-                <span>Written by XXX - xx/xx/xxxx</span>
-            </footer>
+        <article class="article">
+            <div class="article-short article-short-width-limit">
+                <header>
+                    <h1>How to create Maurer Rose graphics with P5.js</h1>
+                </header>
+                <article class="article-short-content">
+                    <div class="article-text">
+                        <p>
+                            In this article, I will show you how to create a Maurer Rose SVG generator using the library
+                            <a
+                                    href="https://p5js.org/"
+                                    title="Go to p5js.org"
+                                    target="_blank">p5.js</a> from the <a
+                                href="https://processing.org"
+                                title="Go to processing.org"
+                                target="_blank">Processing</a> foundation.
+                            First of all, I want to mention that most of the code I used is strongly inspired by a <a
+                                href="https://www.youtube.com/watch?v=4uU9lZ-HSqA"
+                                title="Go to the youtube tutorial: Coding in the Cabana 1: Maurer Rose"
+                                target="_blank">tutorial</a>
+                            of Daniel Shiffman.
+                            The library p5.js aims to provide a tool for making coding in the context of "visual art"
+                            more
+                            accessible for artists, designers and everybody else interested in this topic.
+                        </p>
+                    </div>
+                    <div class="article-img">
+                        <img src="img/maurer_rose_svg/maurer_rose_69.68757893601692_62.01883353719547.svg"/>
+                    </div>
+                </article>
+                <footer>
+                    <button><a href="article_01.html">Read more...</a></button>
+                    <br>
+                    <span class="article-category">#coding, #art</span>
+                    <br>
+                    <span class="article-author">by riorudo - 18/02/2020</span>
+                </footer>
+            </div>
         </article>
-        <article class="article-short">
-            <header>
-                <span>#category</span>
-                <h3>Title of article</h3>
-            </header>
-            <article>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <button>Read more...</button>
-            </article>
-            <footer>
-                <span>Written by XXX - xx/xx/xxxx</span>
-            </footer>
+        <article class="article">
+            <div class="article-short">
+                <header>
+                    <h1>Maurer Rose Collection (Part 1)</h1>
+                </header>
+                <article class="article-short-collection">
+                    <div class="article-img article-img-first">
+                        <img src="img/maurer_rose_svg/part01/maurer_rose_15.264066566692335_43.43457108258277.svg"/>
+                    </div>
+                    <div class="article-img">
+                        <img src="img/maurer_rose_svg/part01/maurer_rose_32.99360710057708_43.2297861184643.svg"/>
+                    </div>
+                    <div class="article-img">
+                        <img src="img/maurer_rose_svg/part01/maurer_rose_38.50756283352562_89.24981274324006.svg"/>
+                    </div>
+                    <div class="article-img">
+                        <img src="img/maurer_rose_svg/part01/maurer_rose_12.09658659642001_55.36702379935592.svg"/>
+                    </div>
+                    <div class="article-img article-img-last">
+                        <img src="img/maurer_rose_svg/part01/maurer_rose_67.24389287843351_43.74817120721451.svg"/>
+                    </div>
+                </article>
+                <footer>
+                    <button><a href="article_02.html">Read more...</a></button>
+                    <br>
+                    <span class="article-category">#coding, #art, #gallery</span>
+                    <br>
+                    <span class="article-author">by riorudo - 20/02/2020</span>
+                </footer>
+            </div>
         </article>
-        <article class="article-short">
-            <header>
-                <span>#category</span>
-                <h3>Title of article</h3>
-            </header>
-            <article>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <button>Read more...</button>
-            </article>
-            <footer>
-                <span>Written by XXX - xx/xx/xxxx</span>
-            </footer>
+        <article class="article">
+            <div class="article-short">
+                <header>
+                    <h1>Maurer Rose Minimal Collection (Part 2)</h1>
+                </header>
+                <article class="article-short-collection">
+                    <div class="article-img article-img-first">
+                        <img src="img/maurer_rose_svg/part02/maurer_rose_n_22_d_132.svg"/>
+                    </div>
+                    <div class="article-img">
+                        <img src="img/maurer_rose_svg/part02/maurer_rose_n_2_d_24.svg"/>
+                    </div>
+                    <div class="article-img">
+                        <img src="img/maurer_rose_svg/part02/maurer_rose_n_2_d_72.svg"/>
+                    </div>
+                    <div class="article-img">
+                        <img src="img/maurer_rose_svg/part02/maurer_rose_n_20_d_132.svg"/>
+                    </div>
+                    <div class="article-img article-img-last">
+                        <img src="img/maurer_rose_svg/part02/maurer_rose_n_3_d_80.svg"/>
+                    </div>
+                </article>
+                <footer>
+                    <button><a href="article_03.html">Read more...</a></button>
+                    <br>
+                    <span class="article-category">#coding, #art, #gallery, #minimal</span>
+                    <br>
+                    <span class="article-author">by riorudo - 20/02/2020</span>
+                </footer>
+            </div>
         </article>
     </section>
     <footer class="footer box">
-        <div>
-            <span>Created by Michael Hochwieser 2020 - Copyleft</span>
-        </div>
+        <span class="footer-page-author">Created by riorudo 2020 - Copyleft</span>
     </footer>
 </section>
+<script src="js/menu-expander.js" type="application/javascript"></script>
 </body>
 </html>
