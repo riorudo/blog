@@ -1,3 +1,7 @@
+@import "overview-page.css";
+@import "article-collection.css";
+@import "article-full.css";
+
 html {
     font-family: 'Roboto', sans-serif;
     font-size: 21px;
@@ -136,6 +140,16 @@ nav {
     justify-content: center;
     border-top: 1px solid #442916;
 }
+
+.social-icons-box {
+    float: right;
+}
+
+.social-icon {
+    margin: 0 5px;
+    width: 30px;
+}
+
 
 @media (min-width: 900px) {
     h4 {
